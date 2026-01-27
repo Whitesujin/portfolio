@@ -1,0 +1,123 @@
+@use "variables" as *;
+
+body:has(.guide-container) {
+  background-color: $black;
+}
+
+.guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  background: #fff;
+  color: #000;
+}
+
+.guide-header {
+  border-bottom: 2px solid $black;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+
+.guide-section {
+  margin-bottom: 80px;
+}
+
+.guide-title {
+  @include h5;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+/* Typo List */
+.typo-list {
+  .typo-item {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    .label { font-size: 12px; color: #666; margin-bottom: 10px; }
+  }
+  
+  .h1-text { @include h1; }
+  .h2-text { @include h2; }
+  .h3-text { @include h3; }
+  .h4-text { @include h4; }
+  .h5-text { @include h5; }
+  .p1-text { @include para1; }
+  .p2-text { @include para2; }
+  .p3-text { @include para3; }
+  .p4-text { @include para4; }
+	.caption1 { @include caption1; }
+	.caption2 { @include caption2; }
+}
+
+/* Color List */
+.color-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 16px;
+  
+  .color-item {
+    text-align: center;
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+
+    span { 
+        display: block;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+  }
+  
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid #eee;
+    &.bg-black { background-color: $black; }
+    &.bg-white { background-color: $white; }
+    &.bg-green { background-color: $green; }
+    &.bg-yellow { background-color: $yellow; }
+    &.bg-blue { background-color: $blue; }
+    &.bg-red { background-color: $red; }
+    &.bg-brown { background-color: $brown; }
+    &.bg-dark-brown { background-color: $dark-brown; }
+    &.bg-beige { background-color: $beige; }
+    &.bg-divider { background-color: $divider; }
+    &.bg-light-blue { background-color: $light-blue; }
+
+    &.bg-black,
+    &.bg-dark-brown {
+        span {
+            color: $white;
+        }
+     }
+  }
+}
+
+.component-list {
+  .component-item {
+    margin-bottom: 40px;
+    
+    .label { font-size: 12px; color: #666; margin-bottom: 10px; }
+
+    .component-view {
+      display: flex;
+      flex-direction: column;
+      min-height: 150px;
+			width: 100%;
+
+			.project-list {
+				max-width: 640px;
+			}
+    }
+  }
+}

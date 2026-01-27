@@ -1,0 +1,129 @@
+// color palette
+$black: #000000;
+$white: #FFFFFF;
+$green: #029902;
+$yellow: #FCBE1D;
+$blue:  #1C40CF;
+$red:   #F83C00;
+$brown: #7F4D1F;
+$dark-brown: #422307;
+$beige: #FBF9EA;
+$divider: #EBEBEB;
+$light-blue: #DAE8FF; // Headline 6
+
+// responsive breakpoints
+$tablet: 1279px;
+$mobile: 799px;
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+$font-header: 'Bricolage Grotesque', sans-serif;
+$font-para: 'Archivo Narrow', 'Pretendard', sans-serif;
+$font-para-3: 'Lisu Bosa', serif;
+
+// layout variables
+$inner-width: 1280px;
+
+// font style mixin
+@mixin font-style($size, $lh, $ls, $weight: 400) {
+  font-size: #{$size}px;
+  line-height: $lh * 0.01;
+  letter-spacing: ($ls * 0.02) * 1em;
+  font-weight: $weight;
+}
+
+// typography mixins
+// Headings
+@mixin h1 {
+  font-family: $font-header;
+  font-variation-settings: "wdth" 88;
+  @include font-style(200, 80, -1, 800);
+  @include tablet { @include font-style(160, 80, -1, 800); }
+  @include mobile { @include font-style(80, 80, -1, 800); }
+}
+
+@mixin h2 {
+  font-family: $font-header;
+  font-variation-settings: "wdth" 88;
+  @include font-style(120, 80, -1, 800);
+  @include tablet { @include font-style(72, 80, -1, 800); }
+  @include mobile { @include font-style(40, 80, -1, 800); }
+}
+
+@mixin h3 {
+  font-family: $font-header;
+  font-variation-settings: "wdth" 88;
+  @include font-style(80, 80, -1, 800);
+  @include tablet { @include font-style(64, 80, -1, 800); }
+  @include mobile { @include font-style(32, 80, -1, 800); }
+}
+
+@mixin h4 {
+  font-family: $font-header;
+  font-variation-settings: "wdth" 88;
+  @include font-style(56, 100, -1, 700);
+  @include tablet { @include font-style(48, 100, -1, 700); }
+  @include mobile { @include font-style(24, 100, -1, 700); }
+}
+
+@mixin h5 {
+  font-family: $font-header;
+  font-variation-settings: "wdth" 88;
+  @include font-style(32, 100, -1, 600);
+  @include tablet { @include font-style(24, 100, -1, 600); }
+  @include mobile { @include font-style(20, 100, -1, 600); }
+}
+
+// Paragraphs
+@mixin para1 {
+  font-family: $font-para;
+  @include font-style(32, 120, -1, 500);
+  @include tablet { @include font-style(28, 120, -1, 500); }
+  @include mobile { @include font-style(28, 120, -1, 500); }
+}
+
+@mixin para2{
+  font-family: $font-para;
+  @include font-style(24, 120, 0, 400);
+  @include tablet { @include font-style(20, 130, 0, 400); }
+  @include mobile { @include font-style(18, 140, 0, 400); }
+}
+
+@mixin para3 {
+  font-family: $font-para-3;
+  @include font-style(20, 100, 0, 200);
+  @media (max-width: $tablet) { @include font-style(18, 100, -2, 200); }
+  @media (max-width: $mobile) { @include font-style(18, 100, -2, 200); }
+}
+
+@mixin para4-sb {
+  font-family: $font-para;
+  @include font-style(16, 130, 0, 600);
+}
+
+@mixin para4 {
+  font-family: $font-para;
+  @include font-style(16, 130, 0, 500);
+}
+
+@mixin caption1 {
+  font-family: $font-para;
+  @include font-style(12, 120, 6, 500);
+  text-transform: uppercase;
+}
+
+@mixin caption2 {
+  font-family: $font-para;
+  @include font-style(10, 120, 6, 500);
+  text-transform: uppercase;
+}

@@ -1,0 +1,80 @@
+@use "variables" as *;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Lisu+Bosa:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../fonts/BricolageGrotesque[opsz,wdth,wght].woff2') format('woff2'),
+       url('../fonts/BricolageGrotesque[opsz,wdth,wght].ttf') format('truetype');
+  font-weight: 200 800;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $white;
+  font-family: $font-para;
+  color: $black;
+  line-height: 1.5;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border: 0;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+*:focus-visible {
+  outline: 2px solid $blue;
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: $blue;
+  color: $white;
+}
+
+.inner {
+  max-width: $inner-width;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
