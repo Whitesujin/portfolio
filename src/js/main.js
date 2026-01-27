@@ -10,14 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // 1. 커서 요소 동적 생성 (메인에서만 생성됨)
+  // custom cursor
   const cursor = document.createElement('div');
   cursor.classList.add('cursor-follow');
   document.body.appendChild(cursor);
-
   const cursorAreas = document.querySelectorAll('.custom-cursor-area');
 
-  // 2. 마우스 추적
   window.addEventListener('mousemove', (e) => {
     gsap.to(cursor, {
         x: e.clientX,
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. 변신 로직 (area가 있을 때만)
   cursorAreas.forEach(area => {
     area.addEventListener('mouseenter', (e) => {
       const cursorType = e.currentTarget.dataset.cursor;
@@ -41,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
     area.addEventListener('mouseleave', () => {
       cursor.classList.remove('is-active');
       cursor.removeAttribute('data-cursor');
+    });
+  });
+
+  // scroll text click event
+  document.querySelector('.scroll-text').addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const target = document.querySelector('#projects');
+    target.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
     });
   });
 });

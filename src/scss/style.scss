@@ -34,7 +34,6 @@
         flex: 1 0 0px;
         position: relative;
         display: inline-block;
-        // margin-bottom: 20px;
         color: $green;
         @include h1;
         
@@ -77,8 +76,9 @@
         }
 
         .slogan {
-          max-width: 300px;
+          max-width: 340px;
           @include para4;
+          word-break: keep-all;
 
           @include mobile {
             max-width: 100%;
