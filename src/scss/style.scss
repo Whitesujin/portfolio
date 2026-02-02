@@ -1026,6 +1026,17 @@
   .info-section {
     padding: 160px 20px;
 
+    .is-archived {}
+    
+    .is-closed {
+      .btn-visit {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+        text-decoration: line-through;
+      }
+    }
+
     .btn-visit {
       // display: inline-flex;
       // align-items: center;
