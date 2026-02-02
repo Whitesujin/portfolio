@@ -1,110 +1,114 @@
 #intro {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 64px;
-	min-height: 100vh;
-	background-color: $beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  min-height: 100vh;
+  background-color: $beige;
 
-	.intro-head {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 32px;
-		position: relative;
+  .intro-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+	text-align: center;
 
-		.intro-deco {
-				position: absolute;
-				top: -24px;
-				right: -32px;
-				left: auto;
-				animation: bounce 3s infinite;
+    .intro-deco {
+      position: absolute;
+      top: -24px;
+      right: -32px;
+      left: auto;
+      animation: bounce 3s infinite;
 
-			svg {
-				width: 56px;
-				height: 56px;
-				color: $yellow;
-				animation: spin 8s linear infinite;
-			}
-		}
+      svg {
+        width: 56px;
+        height: 56px;
+        color: $yellow;
+        animation: spin 8s linear infinite;
+      }
+    }
 
-		.intro-subject {
-				@include h1;
-				color: $green;
-				// text-decoration: underline from-font dotted rgb(255, 231, 170);
-				// text-decoration: underline from-font dotted rgb(2, 153, 2);
-		}
+    .intro-subject {
+      @include h1;
+      color: $green;
+      // text-decoration: underline from-font dotted rgb(255, 231, 170);
+      // text-decoration: underline from-font dotted rgb(2, 153, 2);
+    }
 
-		.intro-summary {
-			@include para4;
-		}
-}
+    .intro-summary {
+      @include para4;
+    }
+  }
 
-.intro-body {
-	
-	.button-area {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 40px;
-		
-		.btn-intro {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			width: 160px;
-			height: 48px;
-			background-color: $light-blue;
-			box-shadow: 8px 8px 0px $yellow;
-	
-			&:hover {
-				box-shadow: 4px 4px 0px $brown;
-				transform: translateY(2px);
-				transition: all 0.2s ease-in-out;
-			}
-		}
-	}
-}
+  .intro-body {
+    .button-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
 
-.intro-foot {
-	$step: calc(100% / 35);
+      .btn-intro {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 48px;
+        background-color: $light-blue;
+        box-shadow: 8px 8px 0px $brown;
 
-	position: absolute;
-	top: auto;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 80px;
-	background-image: repeating-linear-gradient( 90deg, $green, $green $step, $light-blue $step, $light-blue ($step * 2) );
+        &:hover {
+          box-shadow: 4px 4px 0px $brown;
+          transform: translateY(2px);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
 
-	.intro-info {
-		display: flex;
-		justify-content: space-between;
-		padding: 16px;
-		background-color: $beige;
-	}
+  .intro-foot {
+    $step: calc(100% / 35);
 
-		.copyright, .name {@include para4;}
-	}
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: repeating-linear-gradient(90deg, $green, $green $step, $light-blue $step, $light-blue ($step * 2));
+
+    .intro-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      background-color: $beige;
+    }
+
+    .copyright,
+    .name {
+      @include para4;
+    }
+  }
 }
 
 // Animations
 @keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes bounce {
-	0%, 100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-20px);
-	}
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }

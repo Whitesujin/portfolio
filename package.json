@@ -7,11 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "glob": "^13.0.0",
     "sass-embedded": "^1.97.2",
     "vite": "^7.2.4"
   },
