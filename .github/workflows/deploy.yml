@@ -1,7 +1,11 @@
 name: Deploy
 on:
   push:
-    branches: ["main"] # 수진님의 브랜치명 확인 (main 또는 master)
+    branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
