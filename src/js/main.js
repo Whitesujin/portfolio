@@ -7,39 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 8,      // 8초에 한 바퀴 (더 천천히 돌리려면 숫자를 키우세요)
     repeat: -1,       // 무한 반복
     ease: "none"      // 끊김 없이 일정한 속도로
-  });
-
-
-  // custom cursor
-  const cursor = document.createElement('div');
-  cursor.classList.add('cursor-follow');
-  document.body.appendChild(cursor);
-  const cursorAreas = document.querySelectorAll('.custom-cursor-area');
-
-  window.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        xPercent: -50,
-        yPercent: -50,
-        duration: 0.2,
-        scale: 1,
-        ease: "power2.out",
-        overwrite: true
-    });
-  });
-
-  cursorAreas.forEach(area => {
-    area.addEventListener('mouseenter', (e) => {
-      const cursorType = e.currentTarget.dataset.cursor;
-      cursor.classList.add('is-active');
-      cursor.setAttribute('data-cursor', cursorType);
-    });
-    area.addEventListener('mouseleave', () => {
-      cursor.classList.remove('is-active');
-      cursor.removeAttribute('data-cursor');
-    });
-  });
+  }); 
 
   // scroll text click event
   document.querySelector('.scroll-text').addEventListener('click', (e) => {

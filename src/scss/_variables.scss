@@ -1,5 +1,6 @@
 // color palette
 $black: #000000;
+$grey: #bdbdbd;
 $white: #FFFFFF;
 $green: #029902;
 $yellow: #FCBE1D;
@@ -9,7 +10,35 @@ $brown: #7F4D1F;
 $dark-brown: #422307;
 $beige: #FBF9EA;
 $divider: #EBEBEB;
-$light-blue: #DAE8FF; // Headline 6
+$light-blue: #DAE8FF;
+
+$colors: (
+    "black": $black,
+    "grey": $grey,
+    "white": $white,
+    "green": $green,
+    "yellow": $yellow,
+    "blue": $blue,
+    "red": $red,
+    "brown": $brown,
+    "dark-brown": $dark-brown,
+    "beige": $beige,
+    "divider": $divider,
+    "light-blue": $light-blue
+);
+
+@each $name, $value in $colors {
+    .bg-#{$name} {
+        background-color: $value;
+
+        @if $name == "black" or $name == "dark-brown" {
+            span {
+                color: $white;
+            }
+        }
+    }
+}
+
 
 // responsive breakpoints
 $tablet: 1279px;
@@ -71,9 +100,9 @@ $inner-width: 1280px;
 @mixin h4 {
   font-family: $font-header;
   font-variation-settings: "wdth" 88;
-  @include font-style(56, 100, -1, 700);
-  @include tablet { @include font-style(48, 100, -1, 700); }
-  @include mobile { @include font-style(24, 100, -1, 700); }
+  @include font-style(56, 100, -1, 600);
+  @include tablet { @include font-style(48, 100, -1, 600); }
+  @include mobile { @include font-style(24, 100, -1, 600); }
 }
 
 @mixin h5 {

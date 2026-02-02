@@ -2,6 +2,8 @@ import '../scss/common.scss';
 import '../scss/style.scss'
 import '../scss/guide.scss';
 
+import { gsap } from "gsap";
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // header
@@ -17,6 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
   //   }
 
 
+ // custom cursor
+  const cursor = document.createElement('div');
+  cursor.classList.add('cursor-follow');
+  document.body.appendChild(cursor);
+  const cursorAreas = document.querySelectorAll('.custom-cursor-area');
 
+  window.addEventListener('mousemove', (e) => {
+    gsap.to(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        xPercent: -50,
+        yPercent: -50,
+        duration: 0.2,
+        scale: 1,
+        ease: "power2.out",
+        overwrite: true
+    });
+  });
+
+  cursorAreas.forEach(area => {
+    area.addEventListener('mouseenter', (e) => {
+      const cursorType = e.currentTarget.dataset.cursor;
+      cursor.classList.add('is-active');
+      cursor.setAttribute('data-cursor', cursorType);
+    });
+    area.addEventListener('mouseleave', () => {
+      cursor.classList.remove('is-active');
+      cursor.removeAttribute('data-cursor');
+    });
+  });
   
 });
