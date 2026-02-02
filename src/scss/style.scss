@@ -38,31 +38,50 @@
       .header-logo {        
         flex: 1 0 0px;
         position: relative;
-        display: inline-block;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
         color: $green;
-        @include h1;
         
-        h1, .wbr {
+        .logo {
+          display: inline-flex;
+          align-items: center;
+          gap: 20px;
+          position: relative;
+          @include h1;
+
+          @include tablet {
+            gap: 16px;
+          }
+
+          @include mobile {
+            gap: 8px;
+          }
+        }
+
+        .wbr {
           @include h1;
         }
-      }
-      
-      .header-deco {
-        position: absolute;
-        top: 10%;
-        right: -120px;
-        width: 120px;
-        height: auto;
 
-        @include mobile {
-          width: 48px;
-        }
+        .header-deco {
+          width: 120px;
+          height: auto;
+  
+          @include tablet {
+            width: 96px;
+          }
 
-        svg {
-          width: 100%;
-          height: 100%;
-          transform-origin: center; 
-          display: block;
+          @include mobile {
+            width: 48px;
+          }
+  
+          svg {
+            width: 100%;
+            height: 100%;
+            transform-origin: center; 
+            display: block;
+          }
         }
       }
       
@@ -960,7 +979,8 @@
         }
 
         dd {
-          @include para2;
+          @include para4;
+          word-break: keep-all;
         }
       }
     }
@@ -999,6 +1019,10 @@
     }
   }
 
+  .project-list {
+    border-bottom: 1px solid $divider;
+  }
+
   .info-section {
     padding: 160px 20px;
 
@@ -1010,7 +1034,12 @@
 
       &[href] {
         cursor: pointer;
+        // text-decoration: underline;;
         // &:hover { background: #000; color: #fff; }
+
+        &:hover {
+          text-decoration: underline;;
+        }
       }
 
       &.is-disabled {
@@ -1019,8 +1048,11 @@
         // background: #eee;
       }
     }
-  }
 
+    .label-status {
+      margin-bottom: 4px;
+    }
+  }
 
   // Label
   .label-status {
@@ -1032,7 +1064,7 @@
     // left: auto;
     padding: 4px 8px;
     border-radius: 8px;
-    @include caption1;
+    @include caption2;
     color: $white;
 
     &.is-live {
@@ -1052,7 +1084,6 @@
     &.is-archived {
     }
   }
-
 }
 
 .about {
