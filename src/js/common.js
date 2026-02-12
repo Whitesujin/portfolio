@@ -5,6 +5,35 @@ import '../scss/guide.scss';
 import { gsap } from "gsap";
 
 
+
+const projectData = {
+  "proj-01": { title: "유컴패니온 표준화 가이드", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-02": { title: "CROI", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-03": { title: "AK 플라자 EDM", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-04": { title: "LinQ", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-05": { title: "DOMS", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-06": { title: "고충솔루션센터", imgSrc: "../src/images/img_project_ex.jpg" }
+};
+
+window.openPopup = function(id) {
+  const data = projectData[id];
+  if (!data) return;
+
+  const titleEl = document.getElementById('popupTitle');
+  if (titleEl) titleEl.innerText = data.title;
+  
+  document.getElementById('popupImg').src = data.imgSrc;
+  
+  document.getElementById('layerPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; 
+};
+
+window.closePopup = function() {
+  document.getElementById('layerPopup').style.display = 'none';
+  document.body.style.overflow = ''; 
+};
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // header
   const headerNav = document.querySelector('.header-nav');
@@ -49,5 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.removeAttribute('data-cursor');
     });
   });
-  
 });
+
