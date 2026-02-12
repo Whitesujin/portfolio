@@ -1,4 +1,4 @@
-# 🚀 BAEK SUJIN : PORTFOLIO 2026
+# 🚀 PORTFOLIO 2026 ![Build Status](https://github.com/Whitesujin/portfolio/actions/workflows/deploy.yml/badge.svg)
 
 > **Brutalist Concept Web Publisher Portfolio**
 > "불필요한 장식을 덜어내고 본질에 집중하는 퍼블리싱을 지향합니다."
@@ -9,8 +9,14 @@
 **배포 주소:** [https://whitesujin.github.io/portfolio/]
 
 ## 🛠 Tech Stacks
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![Sass](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=Sass&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232088FF.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
 - **Markup:** HTML5 (Semantic Markup)
-- **Style:** CSS3 (Brutalism UI, Responsive Design)
+- **Style:** SCSS (Variables, Nesting, Mixins 활용)
 - **Script:** Vanilla JavaScript (ES6+)
 - **Build Tool:** Vite
 - **CI/CD:** GitHub Actions
@@ -23,7 +29,7 @@
 ## 📁 Project Structure
 ```text
 src/
-├── assets/          # 이미지 및 정적 자원
-├── css/             # 스타일시트 (reset, layout, popup)
-└── main.js          # 팝업 로직 및 데이터 관리
-index.html           # 메인 레이아웃
+├── images/          # 이미지 및 아이콘
+├── scss/            # SCSS 스타일 시트 (모듈화 관리)
+└── js/              # 프로젝트 통합 스크립트 및 데이터 객체
+index.html           # 인트로 레이아웃
