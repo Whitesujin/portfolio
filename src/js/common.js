@@ -3,7 +3,9 @@ import '../scss/style.scss'
 import '../scss/guide.scss';
 
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 const projectData = {
@@ -78,5 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
       cursor.removeAttribute('data-cursor');
     });
   });
+
+  const fadeItems = document.querySelectorAll('.fade-item');
+
+  fadeItems.forEach((item) => {
+    // HTML에서 설정한 값을 가져오되, 없을 경우를 대비해 기본값(||) 설정
+    const dur = item.dataset.duration || 1.2;
+    const del = item.dataset.delay || 0;
+    const yVal = item.dataset.y || 60;
+
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+      y: yVal,
+      opacity: 0,
+      duration: dur, // 개별 속도 적용
+      delay: del,    // 개별 지연 시간 적용
+      ease: "back.out(1.7)",
+    });
+  });
+
 });
 
