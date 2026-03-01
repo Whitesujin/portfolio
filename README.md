@@ -6,7 +6,7 @@
 ---
 
 ## 🔗 Live Demo
-**배포 주소:** [https://whitesujin.github.io/portfolio/]
+**배포 주소:** <a href="https://whitesujin.github.io/portfolio/" target="_blank">https://whitesujin.github.io/portfolio/</a>
 
 ## 🛠 Tech Stacks
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
