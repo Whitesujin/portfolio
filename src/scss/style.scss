@@ -1086,9 +1086,14 @@
     .popup-body {
       flex: 1 1 100%;
       overflow-x: hidden;
-      overflow-y: overlay;
+      // overflow-y: overlay;
+
+      // &::-webkit-scrollbar {
+      //   width: 10px;
+      // }
+
       
-      .img-area {
+      .img-wrap {
         width: 100%;
         line-height: 0;
         
@@ -1096,6 +1101,7 @@
           width: 100%;
           height: auto;
           display: block;
+          transform: translateZ(0);
         }
       }
     }

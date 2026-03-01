@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const projectData = {
-  "proj-01": { title: "유컴패니온 표준화 가이드", imgSrc: "../src/images/img_project_ex.jpg" },
-  "proj-02": { title: "CROI", imgSrc: "../src/images/img_project_ex.jpg" },
-  "proj-03": { title: "AK 플라자 EDM", imgSrc: "../src/images/img_project_ex.jpg" },
-  "proj-04": { title: "LinQ", imgSrc: "../src/images/img_project_ex.jpg" },
-  "proj-05": { title: "DOMS", imgSrc: "../src/images/img_project_ex.jpg" },
+  "proj-01": { title: "유컴패니온 표준화 가이드", imgSrc: "../src/images/img_project_ucp.jpg" },
+  "proj-02": { title: "CROI", imgSrc: "../src/images/img_project_croi.jpg" },
+  "proj-03": { title: "AK 플라자 EDM", imgSrc: "../src/images/img_project_ak.jpg" },
+  "proj-04": { title: "LinQ", imgSrc: "../src/images/img_project_linq.jpg" },
+  "proj-05": { title: "DOMS", imgSrc: "../src/images/img_project_doms.jpg" },
   "proj-06": { title: "고충솔루션센터", imgSrc: "../src/images/img_project_ex.jpg" }
 };
 
