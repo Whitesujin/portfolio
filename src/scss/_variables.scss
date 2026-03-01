@@ -131,8 +131,8 @@ $inner-width: 1280px;
 @mixin para3 {
   font-family: $font-para-3;
   @include font-style(20, 100, 0, 200);
-  @media (max-width: $tablet) { @include font-style(18, 100, -2, 200); }
-  @media (max-width: $mobile) { @include font-style(18, 100, -2, 200); }
+  @media (max-width: $tablet) { @include font-style(18, 130, -2, 200); }
+  @media (max-width: $mobile) { @include font-style(18, 130, -2, 200); }
 }
 
 @mixin para4-sb {
