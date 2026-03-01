@@ -8,6 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 
+/* ----------------------------------------
+  Project Data
+---------------------------------------- */
 const projectData = {
   "proj-01": { title: "유컴패니온 표준화 가이드", imgSrc: "../src/images/img_project_ucp.jpg" },
   "proj-02": { title: "CROI", imgSrc: "../src/images/img_project_croi.jpg" },
@@ -17,6 +20,10 @@ const projectData = {
   "proj-06": { title: "고충솔루션센터", imgSrc: "../src/images/img_project_ex.jpg" }
 };
 
+
+/* ----------------------------------------
+  Popup
+---------------------------------------- */
 window.openPopup = function(id) {
   const data = projectData[id];
   if (!data) return;
@@ -36,20 +43,35 @@ window.closePopup = function() {
 };
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  // header
+/* ----------------------------------------
+  Load Partials
+---------------------------------------- */
+async function loadPartial(id, path) {
+  const res = await fetch(path);
+  const html = await res.text();
+  document.getElementById(id).innerHTML = html;
+}
+
+const base = import.meta.env.BASE_URL;
+
+// loadPartial 완료 후 실행
+Promise.all([
+  loadPartial('header', `${base}partials/header.html`),
+  loadPartial('footer', `${base}partials/footer.html`)
+]).then(() => {
   const headerNav = document.querySelector('.header-nav');
-  
   if (headerNav) {
     setTimeout(() => {
       headerNav.classList.add('is-loaded');
     }, 300);
-  } 
-  //   else {
-  //     console.log("이 페이지에는 헤더가 없네요! 스크립트를 건너뜁니다.");
-  //   }
+  }
+});
 
 
+/* ----------------------------------------
+  DOM Ready
+---------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
  // custom cursor
   const cursor = document.createElement('div');
   cursor.classList.add('cursor-follow');
@@ -84,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeItems = document.querySelectorAll('.fade-item');
 
   fadeItems.forEach((item) => {
-    // HTML에서 설정한 값을 가져오되, 없을 경우를 대비해 기본값(||) 설정
+    // 기본값 설정
     const dur = item.dataset.duration || 1.2;
     const del = item.dataset.delay || 0;
     const yVal = item.dataset.y || 60;
