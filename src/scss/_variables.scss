@@ -142,7 +142,7 @@ $inner-width: 1280px;
 
 @mixin para4 {
   font-family: $font-para;
-  @include font-style(16, 130, 0, 500);
+  @include font-style(16, 130, 0, 400);
 }
 
 @mixin caption1 {

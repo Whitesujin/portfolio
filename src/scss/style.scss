@@ -228,6 +228,7 @@
 // Button
 .btn-view-link {
   display: flex;
+
   &:hover {
     .btn-text {
       color: $red;
@@ -308,6 +309,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   width: 100%;
+  box-shadow: inset 0 0 0 1px $divider;
 
   @include mobile {
     flex-direction: column;
@@ -416,12 +418,15 @@
 }
 
 .main-project {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
   .main-project-item {
     display: flex;
     justify-content: space-between;
     // align-items: flex-start;
+    overflow: hidden;
     height: 100%;
     box-shadow: inset 0 -1px 0 0 $divider;
 
@@ -466,6 +471,10 @@
          .desc {
            word-break: keep-all;
            @include para4;
+
+           strong {
+             @include para4-sb;
+           }
         }
 
         .btn-view-link {
@@ -526,6 +535,7 @@
       .img-box {
         width: 100%;
         line-height: 0;
+        aspect-ratio: 16 / 9;
         // aspect-ratio: 3 / 2; // 이미지 비율에 맞춰 조정
 
         img {

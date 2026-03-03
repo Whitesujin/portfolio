@@ -53,13 +53,11 @@
       text-align: center;
       word-break: keep-all;
 
-      .dt {}
 
-      .dd {
-        // @include para3;
-
+      .desc {
+        @include para4;
+        
         &.eng {
-          // @include para4;
           color: $grey;
         }
       }
